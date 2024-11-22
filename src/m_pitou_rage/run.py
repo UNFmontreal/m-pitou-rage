@@ -28,12 +28,6 @@ def parse_args() -> argparse.Namespace:
         help="a space delimited list of sessions identifiers or a single "
         "identifier (the ses- prefix can be removed)",
     )
-    p.add_argument(
-        "--version-specific",
-        action="store_true",
-        default=False,
-        help="allow schema to be specific to the scanner software version",
-    )
     return p.parse_args()
 
 
@@ -70,7 +64,6 @@ def main() -> None:
         inv2_entities = unit1.get_entities().copy()
         inv2_entities["suffix"] = "MP2RAGE"
         inv2_entities["inv"] = 2
-        print(inv2_entities)
         inv2 = layout.get(**inv2_entities)
         assert len(inv2) > 0, f"No second inversion image found for {unit1.relpath}"
         assert len(inv2) == 1, f"Multiple second inversion image found for {unit1.relpath}, not BIDS valid."
