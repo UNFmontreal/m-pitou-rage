@@ -3,9 +3,9 @@ requires = ["flit_core >=2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name =  "py-project-toml"
+name =  "m-pitou-rage"
 authors = [
-    {name = "Daniel Ciborowski", email = "dciborow@microsoft.com"},
+    {name = "Basile Pinsard", email = "basile.pinsard@gmail.com"},
 ]
 description = "Sample Python Project for creating a new Python Module"
 readme = "README.md"
@@ -21,6 +21,14 @@ classifiers = [
 ]
 requires-python = ">=3.8.1"
 dynamic = ["version"]
+
+dependencies = [
+    "pybids",
+    "antspyx"
+]
+
+[project.scripts]
+m-pitou-rage = "m_pitou_rage.run:main"
 
 [project.optional-dependencies]
 spark = [
@@ -52,7 +60,7 @@ Source = "https://github.com/microsoft/python-package-template"
 Tracker = "https://github.com/microsoft/python-package-template/issues"
 
 [tool.flit.module]
-name = "python_package"
+name = "m_pitou_rage"
 
 [tool.bandit]
 exclude_dirs = ["build","dist","tests","scripts"]
