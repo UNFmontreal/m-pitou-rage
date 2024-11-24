@@ -14,6 +14,7 @@ def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="unpitou-rage -- a simple BIDS-app to transfrom MP2RAGE for T1w processing (sMRIPrep, freesurfer)")
     p.add_argument("bids_path", help="path to the BIDS dataset")
     p.add_argument("derivatives_path", help="path to the output BIDS dataset")
+    p.add_argument("process", help="for BIDS-app compliance, not used")
     p.add_argument(
         "--participant-label",
         action="store",
@@ -78,7 +79,9 @@ def main() -> None:
         out_path = Path(layout.build_path(out_entities).replace(args.bids_path, args.derivatives_path))
         logging.info("processing %s %s", unit1.relpath, inv2.relpath)
         mp2rage_to_t1w(unit1.path, inv2.path, out_path)
-        json = unit1.get_metadata()
+        json_out_path = out_path.with_suffix("").with_suffix(".json")
+        with open(json_out_path, 'w') as fd:
+            json.dump(unit1.get_metadata(), fd, indent=2)
 
 if __name__ == "__main__":
     main()
