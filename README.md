@@ -1,4 +1,4 @@
-# M-Pitou-RAGE
+# unpitou-RAGE
 
 A simple BIDS-app that transforms MP2RAGE to a MPRAGE-ish T1w-like contrast to run standard neuroimaging pipelines (eg. sMRIPrep, freesurfer)
 This is pursuing the tradition of making new mp2rage software for the same purpose.

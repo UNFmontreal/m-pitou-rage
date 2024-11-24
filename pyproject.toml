@@ -3,7 +3,7 @@ requires = ["flit_core >=2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name =  "m-pitou-rage"
+name =  "unpitou-rage"
 authors = [
     {name = "Basile Pinsard", email = "basile.pinsard@gmail.com"},
 ]
@@ -28,7 +28,7 @@ dependencies = [
 ]
 
 [project.scripts]
-m-pitou-rage = "m_pitou_rage.run:main"
+unpitou-rage = "unpitou_rage.run:main"
 
 [project.optional-dependencies]
 spark = [
@@ -60,7 +60,7 @@ Source = "https://github.com/microsoft/python-package-template"
 Tracker = "https://github.com/microsoft/python-package-template/issues"
 
 [tool.flit.module]
-name = "m_pitou_rage"
+name = "unpitou_rage"
 
 [tool.bandit]
 exclude_dirs = ["build","dist","tests","scripts"]
