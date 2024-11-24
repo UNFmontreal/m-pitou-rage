@@ -1,12 +1,13 @@
 from __future__ import annotations
 
-import os
-import ants
-import bids
-import logging
 import argparse
 import json
+import logging
+import os
 from pathlib import Path
+
+import ants
+import bids
 
 
 def parse_args() -> argparse.Namespace:
